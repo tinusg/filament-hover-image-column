@@ -1,0 +1,52 @@
+{
+    "name": "tinusg/filament-hover-image-column",
+    "description": "A Filament table column that shows a larger image preview on hover",
+    "keywords": [
+        "filament",
+        "laravel",
+        "image",
+        "hover",
+        "preview",
+        "column"
+    ],
+    "homepage": "https://github.com/tinusg/filament-hover-image-column",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tinus G",
+            "homepage": "https://github.com/tinusg"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "filament/tables": "^5.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^11.0",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TinusG\\FilamentHoverImageColumn\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TinusG\\FilamentHoverImageColumn\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
