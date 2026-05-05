@@ -84,6 +84,10 @@ All `ImageColumn` methods (`circular()`, `square()`, `stacked()`, `disk()`, `vis
 - PHP 8.2+
 - Filament 5.x
 
+## Sponsors
+
+- This plugin is sponsored by [Vaklui](https://www.vaklui.nl).
+
 ## License
 
 MIT License. See [LICENSE](LICENSE) for details.

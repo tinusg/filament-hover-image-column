@@ -62,7 +62,8 @@ class HoverImageColumn extends ImageColumn
     protected function resolvePreviewUrl(): ?string
     {
         if ($this->previewImageUrl !== null) {
-            return $this->evaluate($this->previewImageUrl);
+            $evaluated = $this->evaluate($this->previewImageUrl);
+            return is_string($evaluated) ? $evaluated : null;
         }
 
         $state = $this->getState();
