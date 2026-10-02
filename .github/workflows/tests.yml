@@ -6,22 +6,29 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     strategy:
       fail-fast: true
       matrix:
-        php: [8.2, 8.3, 8.4]
+        # Pest 4 and Testbench 11 require PHP 8.3+.
+        php: ['8.3', '8.4', '8.5']
 
     name: PHP ${{ matrix.php }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # v2
         with:
           php-version: ${{ matrix.php }}
           coverage: none
@@ -34,16 +41,19 @@ jobs:
 
   code-style:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     name: Code Style
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # v2
         with:
-          php-version: 8.4
+          php-version: '8.4'
           coverage: none
 
       - name: Install dependencies

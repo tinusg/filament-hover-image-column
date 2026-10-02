@@ -63,6 +63,7 @@ class HoverImageColumn extends ImageColumn
     {
         if ($this->previewImageUrl !== null) {
             $evaluated = $this->evaluate($this->previewImageUrl);
+
             return is_string($evaluated) ? $evaluated : null;
         }
 
